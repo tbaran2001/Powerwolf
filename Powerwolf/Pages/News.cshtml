@@ -1,0 +1,45 @@
+﻿@page
+@using JsonFiles;
+@model Powerwolf.Pages.NewsModel
+@{
+    ViewData["Title"] = "News";
+    List<News> news = (List<News>)ViewData["News"];
+}
+
+<div class="text-center">
+    <h2 class="title fs-0 fw-bold">News</h2>
+</div>
+@{
+    foreach (News singleNews in news)
+    {
+        string id = "id_" + singleNews.Id, id2 = "#" + id, id3 = "card_" + id;
+        <div class=" text-center bg-white bg-opacity-10" id="@id3">
+            <div class="">
+                <h5 class="card-title fs-1">@singleNews.Title</h5>
+            </div>
+            <div class="card-body">
+
+                <p class="card-text fs-3">@singleNews.ShortDescription</p>
+                <p>
+                    <a class="btn btn-dark fs-4" data-bs-toggle="collapse" href="@id2" role="button" aria-expanded="false" aria-controls="@singleNews.Id">
+                        Read More
+                    </a>
+                </p>
+                <div class="collapse" id="@id">
+                    <div class="  fs-3">
+                        @singleNews.LongDescription
+                        <br>
+                        <div class="text-center">
+                            <img src="@singleNews.Image" class="rounded " width="80%" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" text-muted fs-3">
+                @singleNews.Date
+            </div>
+        </div>
+        <br>
+        <br>
+    }
+}

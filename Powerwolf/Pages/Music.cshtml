@@ -1,0 +1,48 @@
+﻿@page
+@using JsonFiles
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Powerwolf.Pages.MusicModel
+@{
+    ViewData["Title"] = "Music";
+    List<Songs> songs = (List<Songs>)ViewData["Songs"];
+    List<string> albums = (List<string>)ViewData["Albums"];
+}
+
+<div class="container">
+    <h1 class="mb-5 text-center">Music</h1>
+
+    <div class="container">
+        @foreach (string album in albums)
+        {
+            <div class="row mb-5">
+                <div class="col-md-6 text-center">
+                    @{
+                        string temp = album.ToLower().Replace(" ", "_");
+                        temp = "/Photos/" + temp + ".jpg";
+                    }
+                    <img src="@temp" alt="Zdjęcie" class="img-fluid">
+                    <div class="caption fs-2">@album</div>
+                    <div class="fs-3 text-muted">@songs.Find(x=>x.Album==album).RelaseDate</div>
+                </div>
+                <div class="col-md-6 ">
+                    <p class="text-center title fs-0 mb-2" style="margin: 0 0">TRACKLIST</p>
+                    <ul class="fs-3">
+                        @{
+                            int i = 1;
+                        }
+                        @foreach (Songs song in songs)
+                        {
+                            if (song.Album == album)
+                            {
+                                <li><a asp-page="Song" asp-route-songId="@song.Id">@i. @song.Name</a></li>
+                                i++;
+                            }
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Photos\1_Karsten.webp" />
+    <None Include="wwwroot\Photos\2_Benjamin.webp" />
+    <None Include="wwwroot\Photos\3_David.webp" />
+    <None Include="wwwroot\Photos\4_Christian.webp" />
+    <None Include="wwwroot\Photos\5_Roel.webp" />
+    <None Include="wwwroot\Photos\Band.jpeg" />
+    <None Include="wwwroot\Photos\bible_of_the_beast.jpg" />
+    <None Include="wwwroot\Photos\blood_of_the_saints.jpg" />
+    <None Include="wwwroot\Photos\call_of_the_wild.jpg" />
+    <None Include="wwwroot\Photos\lupus_dei.jpg" />
+    <None Include="wwwroot\Photos\metallum_nostrum.jpg" />
+    <None Include="wwwroot\Photos\preachers_of_the_night.jpg" />
+    <None Include="wwwroot\Photos\return_in_bloodred.jpg" />
+    <None Include="wwwroot\Photos\the_sacrament_of_sin.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

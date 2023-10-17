@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "Gargoyles";
+    src: url("/fonts/gargoyles-webfont.woff");
+}
+
+.custom-bg {
+    background-color: var(--bg-color);
+}
+
+:root {
+    --bg-color: #333431;
+    --text-color: #c7c1c3;
+    --special-text-color: #500b00;
+}
+
+html {
+    font-size: 18px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/*css test*/
+table {
+    font-size: 30px;
+}
+
+    table a:hover {
+        color: var(--special-text-color);
+        transition: 0.3s;
+    }
+
+th {
+    color: var(--text-color);
+    font-size: 40px;
+}
+
+td {
+    color: var(--text-color);
+}
+
+a, a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+header {
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-size: 80px;
+    color: var(--special-text-color);
+    font-weight: 900;
+}
+
+* {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Gargoyles;
+}
+
+a:visited {
+    color: var(--text-color);
+}
+
+header a:hover {
+    color: var(--special-text-color) !important;
+}
+
+nav ul li {
+    padding: 10px 15px;
+    line-height: 0;
+    font-size: 24px;
+}
+
+.container {
+    max-width: 90%;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row {
+    justify-content: space-around;
+}
+
+.welcome {
+    width: 60%;
+    min-width: 300px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--special-text-color);
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+}
+
+.title {
+    text-align: center;
+    margin: 80px auto;
+    position: relative;
+    line-height: 60px;
+    color: var(--special-text-color);
+    font-size: 70px;
+}
+
+.band-members p {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
