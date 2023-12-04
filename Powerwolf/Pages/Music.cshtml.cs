@@ -8,11 +8,11 @@ namespace Powerwolf.Pages
     {
         public void OnGet()
         {
-            List<Songs> songs = DataAccess.GetSongs();
+            List<Song> songs = DataAccess.GetSongs();
 
             List<string> albums = new List<string>();
 
-            foreach (Songs song in songs)
+            foreach (Song song in songs)
             {
                 if (!albums.Contains(song.Album))
                 {

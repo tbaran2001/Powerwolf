@@ -3,16 +3,18 @@
 @model Powerwolf.Pages.NewsModel
 @{
     ViewData["Title"] = "News";
-    List<News> news = (List<News>)ViewData["News"];
+    List<NewsItem> news = (List<NewsItem>)ViewData["News"];
 }
 
 <div class="text-center">
     <h2 class="title fs-0 fw-bold">News</h2>
 </div>
 @{
-    foreach (News singleNews in news)
+    foreach (NewsItem singleNews in news)
     {
-        string id = "id_" + singleNews.Id, id2 = "#" + id, id3 = "card_" + id;
+        string id = "id_" + singleNews.Id;
+        string id2 = "#" + id;
+        string id3 = "card_" + id;
         <div class=" text-center bg-white bg-opacity-10" id="@id3">
             <div class="">
                 <h5 class="card-title fs-1">@singleNews.Title</h5>

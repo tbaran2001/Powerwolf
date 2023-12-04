@@ -3,7 +3,7 @@
 @model Powerwolf.Pages.BandMembersModel
 @{
     ViewData["Title"] = "Band";
-    List<BandMembers>? bandMembers = ViewData["BandMembers"] as List<BandMembers>;
+    List<BandMember>? bandMembers = ViewData["BandMembers"] as List<BandMember>;
 }
 
 <div class=" welcome text-center" style="width:100%">
@@ -13,7 +13,16 @@
 </div>
 
 <p class="fs-2 caption text-center">
-    POWERWOLF - a name that fills every disciple of melodic heavy metal with joy and stands for a successful quintet that needs no more introduction after 15 years of steep ascent. The anniversary was celebrated with a best-of release in 2020, which united the highlights of all six studio albums released to date - including both long-running hits from early works, and more recent hits from the gold-awarded records Blessed and Possessed and The Sacrament Of Sin, such as the platinum hit single “Demons Are A Girl's Best Friend”. Now, only about 12 months later, arguably the most successful pack of the contemporary German metal fauna is ready with bared fangs for the next bloody foray.
+    POWERWOLF - a name that fills every disciple of melodic heavy metal with joy and
+    stands for a successful quintet that needs no more introduction after
+    15 years of steep ascent. The anniversary was celebrated with a
+    best-of release in 2020, which united the highlights of all six studio
+    albums released to date - including both long-running hits from early
+    works, and more recent hits from the gold-awarded records Blessed
+    and Possessed and The Sacrament Of Sin, such as the platinum hit
+    single “Demons Are A Girl's Best Friend”. Now, only about 12 months
+    later, arguably the most successful pack of the contemporary German
+    metal fauna is ready with bared fangs for the next bloody foray.
 </p>
 
 <br>
@@ -25,13 +34,49 @@
 <div class="collapse fs-2 caption" id="desc">
     <div class=" text-center">
         <p>
-            The aptly titled Call Of The Wild, which was once again crafted by the venerable production duo of Jens Bogren and Joost van den Broek at Swedish Fascination Street Studios, will be unleashed in July 2021! A new chapter in the band's history will be opened, serving up beloved classic trademarks to long time and newly recruited POWERWOLF devotees alike. Call Of The Wild is surprising and delighting at every stage of this wild 11-track ride, with stylistic advancements on an unprecedented scale! “Faster Than The Flame” - an opening blast that ignites the bonfire in purest POWERWOLF manner as a fiery distillation of such fulminant album openers as “Amen & Attack” or “Fire & Forgive” - bears the distinctive signature of the creative minds around main songwriter Matthew Greywolf even in the first chords, and impressively demonstrates that the five-piece has undoubtedly succeeded in creating its very own, unmistakable sound over the course of the last one and a half decades.
+            The aptly titled Call Of The Wild, which was once again crafted
+            by the venerable production duo of Jens Bogren and Joost van den
+            Broek at Swedish Fascination Street Studios, will be unleashed
+            in July 2021! A new chapter in the band's history will be opened,
+            serving up beloved classic trademarks to long time and newly recruited
+            POWERWOLF devotees alike. Call Of The Wild is surprising and delighting
+            at every stage of this wild 11-track ride, with stylistic advancements
+            on an unprecedented scale! “Faster Than The Flame” - an opening blast
+            that ignites the bonfire in purest POWERWOLF manner as a fiery
+            distillation of such fulminant album openers as “Amen & Attack”
+            or “Fire & Forgive” - bears the distinctive signature of the creative
+            minds around main songwriter Matthew Greywolf even in the first chords,
+            and impressively demonstrates that the five-piece has undoubtedly succeeded
+            in creating its very own, unmistakable sound over the course of the last
+            one and a half decades.
         </p><br>
         <p>
-            From this bomb-proof base, the wolves subsequently dare to take the stage with tracks like the outrageously catchy “Dancing With The Dead” (a future classic on every decent headbanger party playlist!), the wonderfully heretical “Glaubenskraft” and Attila Dorn's epic-emotional magic moment on “Alive Or Undead” - a power ballad on the highest level that finally cements the reputation of the frontman as an absolute exceptional bard!
+            From this bomb-proof base, the wolves subsequently dare to take the
+            stage with tracks like the outrageously catchy “Dancing With The Dead”
+            (a future classic on every decent headbanger party playlist!),
+            the wonderfully heretical “Glaubenskraft” and Attila Dorn's
+            epic-emotional magic moment on “Alive Or Undead” - a power ballad
+            on the highest level that finally cements the reputation of
+            the frontman as an absolute exceptional bard!
         </p><br>
         <p>
-            POWERWOLF enters new musical territory every minute, conquering it for themselves in almost the same second and turning it into one big firework of fresh influences. Lyrically – aside from the usual tongue-in-cheek heresy à la “Undress To Confess” – Call Of The Wild is the hour of mythical scary characters, who would all have good cards in the fight for the rank of official band mascot: While “Beast Of Gévaudan” tells the story of a legendary predator that spread fear and terror in southern France in the middle of the 18th century at top speed, the stomping “Varcolac” pays homage to the eponymous wolfish demon of Romanian folklore, before “Blood For Blood (Faoladh)” evokes the Irish relative of the moon worshiper known to us as "Werewolf" in front of a fitting sound backdrop. Finally, the final offering “Reverent Of Rats” puts a pompous exclamation mark behind a work that can rightfully be called the most multi-faceted in the band's history so far and which – beyond all promotional platitudes – is a hot contender for the top position among this year's metal releases!
+            POWERWOLF enters new musical territory every minute, conquering
+            it for themselves in almost the same second and turning it into
+            one big firework of fresh influences. Lyrically – aside from the
+            usual tongue-in-cheek heresy à la “Undress To Confess” – Call Of
+            The Wild is the hour of mythical scary characters, who would all
+            have good cards in the fight for the rank of official band
+            mascot: While “Beast Of Gévaudan” tells the story of a legendary
+            predator that spread fear and terror in southern France in the
+            middle of the 18th century at top speed, the stomping “Varcolac”
+            pays homage to the eponymous wolfish demon of Romanian folklore,
+            before “Blood For Blood (Faoladh)” evokes the Irish relative of
+            the moon worshiper known to us as "Werewolf" in front of a fitting
+            sound backdrop. Finally, the final offering “Reverent Of Rats”
+            puts a pompous exclamation mark behind a work that can rightfully
+            be called the most multi-faceted in the band's history so far and
+            which – beyond all promotional platitudes – is a hot contender
+            for the top position among this year's metal releases!
         </p>
     </div>
 </div>
@@ -40,7 +85,7 @@
 <h3 class="title fs-0">Band Members</h3>
 <div class="list-group">
     @{
-        foreach (BandMembers member in bandMembers)
+        foreach (BandMember member in bandMembers)
         {
             string temp = "#" + member.Id + "_" + member.FirstName;
             <a href="@temp" class="list-group-item list-group-item-action bg-white bg-opacity-10 text-white fs-3 caption">@member.Nickname</a>
@@ -50,7 +95,7 @@
 <br>
 <br>
 @{
-    foreach (BandMembers member in bandMembers)
+    foreach (BandMember member in bandMembers)
     {
         string temp = member.Id + "_" + member.FirstName;
         <div id="@temp" style=" display:flex; justify-content:center;justify-self:center;justify-items:center">

@@ -13,23 +13,22 @@ namespace Powerwolf.Pages
             _logger = logger;
         }
 
-        readonly HttpClient client = new HttpClient();
+        //Retrieves data and prepares the model for the Index page
         public void OnGet()
         {
-            List<News> news = DataAccess.GetNews();
-            List<BandMembers> bandMembers = DataAccess.GetBandMembers();
-            List<Concerts> concerts = DataAccess.GetConcerts();
-            List<Songs> songs = DataAccess.GetSongs();
+            List<NewsItem> newsItems = DataAccess.GetNews();
+            List<BandMember> bandMembers = DataAccess.GetBandMembers();
+            List<Concert> concerts = DataAccess.GetConcerts();
+            List<Song> songs = DataAccess.GetSongs();
 
             Random random = new Random();
-
             int index = random.Next(songs.Count);
-            Songs randomSong = songs[index];
+            Song randomSong = songs[index];
 
-            ViewData["News"] = news;
+            ViewData["NewsItems"] = newsItems;
             ViewData["BandMembers"] = bandMembers;
             ViewData["Concerts"] = concerts;
-            ViewData["Song"] = randomSong;
+            ViewData["RandomSong"] = randomSong;
         }
     }
 }

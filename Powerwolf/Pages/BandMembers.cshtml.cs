@@ -8,7 +8,7 @@ namespace Powerwolf.Pages
     {
         public void OnGet()
         {
-            List<BandMembers> bandMembers = DataAccess.GetBandMembers();
+            List<BandMember> bandMembers = DataAccess.GetBandMembers();
 
             ViewData["BandMembers"] = bandMembers;
         }

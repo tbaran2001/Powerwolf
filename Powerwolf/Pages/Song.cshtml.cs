@@ -6,12 +6,13 @@ namespace Powerwolf.Pages
 {
     public class SongModel : PageModel
     {
-        public Songs SelectedSong { get; set; } = new Songs();
+        public Song SelectedSong { get; set; } = new Song();
 
         public void OnGet(string songId)
         {
-            List<Songs> songs = DataAccess.GetSongs();
+            List<Song> songs = DataAccess.GetSongs();
 
+            // Use LINQ to find the song with the specified ID
             SelectedSong = songs.First(x => x.Id == songId);
 
             ViewData["Song"] = SelectedSong;

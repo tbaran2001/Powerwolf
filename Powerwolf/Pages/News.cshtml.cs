@@ -8,7 +8,7 @@ namespace Powerwolf.Pages
     {
         public void OnGet()
         {
-            List<News> news = DataAccess.GetNews();
+            List<NewsItem> news = DataAccess.GetNews();
 
             ViewData["News"] = news;
         }

@@ -3,10 +3,10 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-    List<BandMembers> bandmembers = (List<BandMembers>)ViewData["BandMembers"];
-    List<News> news = (List<News>)ViewData["News"];
-    List<Concerts> concerts = (List<Concerts>)ViewData["Concerts"];
-    Songs randomSong = (Songs)ViewData["Song"];
+    List<BandMember> bandMembers = (List<BandMember>)ViewData["BandMembers"];
+    List<NewsItem> news = (List<NewsItem>)ViewData["NewsItems"];
+    List<Concert> concerts = (List<Concert>)ViewData["Concerts"];
+    Song randomSong = (Song)ViewData["RandomSong"];
 }
 
 <div class="container">
@@ -84,7 +84,7 @@
 <div class="container band-members">
     <div class="row">
         <h2 class="title fs-0">Band members</h2>
-        @foreach (BandMembers member in bandmembers)
+        @foreach (BandMember member in bandMembers)
         {
             temp = @member.Id + "_" + member.FirstName;
             <div class="col-md-2 mb-4">

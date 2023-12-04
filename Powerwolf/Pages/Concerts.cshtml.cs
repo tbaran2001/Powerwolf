@@ -8,7 +8,7 @@ namespace Powerwolf.Pages
     {
         public void OnGet()
         {
-            List<Concerts> concerts = DataAccess.GetConcerts();
+            List<Concert> concerts = DataAccess.GetConcerts();
 
             ViewData["Concerts"] = concerts;
         }

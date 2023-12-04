@@ -7,7 +7,7 @@
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class BandMembers
+    public partial class BandMember
     {
         [JsonProperty("id")]
         [JsonConverter(typeof(ParseStringConverter))]
@@ -35,7 +35,7 @@
         public string FacePhoto { get; set; }
     }
 
-    public partial class Concerts
+    public partial class Concert
     {
         [JsonProperty("id")]
         [JsonConverter(typeof(ParseStringConverter))]
@@ -57,7 +57,7 @@
         public string TicketLink { get; set; }
     }
 
-    public partial class News
+    public partial class NewsItem
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -78,7 +78,7 @@
         public string LongDescription { get; set; }
     }
 
-    public partial class Songs
+    public partial class Song
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -102,32 +102,40 @@
         public string YouTubeLink { get; set; }
     }
 
-    public partial class BandMembers
+    // Class definition for BandMember
+    public partial class BandMember
     {
-        public static List<BandMembers> FromJson(string json) => JsonConvert.DeserializeObject<List<BandMembers>>(json, JsonFiles.Converter.Settings);
+        // Static method to deserialize BandMember from JSON
+        public static List<BandMember> FromJson(string json) => JsonConvert.DeserializeObject<List<BandMember>>(json, JsonFiles.Converter.Settings);
     }
 
-    public partial class Concerts
+    // Legal: Class definition for Concert (partial)
+    public partial class Concert
     {
-        public static List<Concerts> FromJson(string json) => JsonConvert.DeserializeObject<List<Concerts>>(json, JsonFiles.Converter.Settings);
+        // Legal: Static method to deserialize Concert from JSON
+        public static List<Concert> FromJson(string json) => JsonConvert.DeserializeObject<List<Concert>>(json, JsonFiles.Converter.Settings);
     }
 
-    public partial class News
+    // Legal: Class definition for NewsItem (partial)
+    public partial class NewsItem
     {
-        public static List<News> FromJson(string json) => JsonConvert.DeserializeObject<List<News>>(json, JsonFiles.Converter.Settings);
+        // Legal: Static method to deserialize NewsItem from JSON
+        public static List<NewsItem> FromJson(string json) => JsonConvert.DeserializeObject<List<NewsItem>>(json, JsonFiles.Converter.Settings);
     }
 
-    public partial class Songs
+    // Legal: Class definition for Song (partial)
+    public partial class Song
     {
-        public static List<Songs> FromJson(string json) => JsonConvert.DeserializeObject<List<Songs>>(json, JsonFiles.Converter.Settings);
+        // Legal: Static method to deserialize Song from JSON
+        public static List<Song> FromJson(string json) => JsonConvert.DeserializeObject<List<Song>>(json, JsonFiles.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this List<BandMembers> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
-        public static string ToJson(this List<Concerts> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
-        public static string ToJson(this List<News> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
-        public static string ToJson(this List<Songs> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
+        public static string ToJson(this List<BandMember> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
+        public static string ToJson(this List<Concert> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
+        public static string ToJson(this List<NewsItem> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
+        public static string ToJson(this List<Song> self) => JsonConvert.SerializeObject(self, JsonFiles.Converter.Settings);
     }
 
     internal static class Converter

@@ -4,52 +4,51 @@ namespace Powerwolf;
 
 public static class DataAccess
 {
-    public static List<BandMembers> GetBandMembers()
+    public static List<BandMember> GetBandMembers()
     {
-        List<BandMembers> output = new List<BandMembers>();
+        List<BandMember> output = new List<BandMember>();
 
-        // Get the path to the BandMembers.json file within the project
         string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/BandMembers.json");
 
         string jsonString = File.ReadAllText(filePath);
-        output = BandMembers.FromJson(jsonString);
+        output = BandMember.FromJson(jsonString);
 
         return output;
     }
 
 
-    public static List<Concerts> GetConcerts()
+    public static List<Concert> GetConcerts()
     {
-        List<Concerts> output = new List<Concerts>();
+        List<Concert> output = new List<Concert>();
 
         string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/Concerts.json");
 
         string jsonString = File.ReadAllText(filePath);
-        output = Concerts.FromJson(jsonString);
+        output = Concert.FromJson(jsonString);
 
         return output;
     }
 
-    public static List<News> GetNews()
+    public static List<NewsItem> GetNews()
     {
-        List<News> output = new List<News>();
+        List<NewsItem> output = new List<NewsItem>();
 
         string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/News.json");
 
         string jsonString = File.ReadAllText(filePath);
-        output = News.FromJson(jsonString);
+        output = NewsItem.FromJson(jsonString);
 
         return output;
     }
 
-    public static List<Songs> GetSongs()
+    public static List<Song> GetSongs()
     {
-        List<Songs> output = new List<Songs>();
+        List<Song> output = new List<Song>();
 
         string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/Songs.json");
 
         string jsonString = File.ReadAllText(filePath);
-        output = Songs.FromJson(jsonString);
+        output = Song.FromJson(jsonString);
 
         return output;
     }

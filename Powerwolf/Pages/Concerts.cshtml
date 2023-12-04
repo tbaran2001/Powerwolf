@@ -3,7 +3,7 @@
 @model Powerwolf.Pages.ConcertsModel
 @{
     ViewData["Title"] = "Concerts";
-    List<Concerts> concerts = (List<Concerts>)ViewData["Concerts"];
+    List<Concert> concerts = (List<Concert>)ViewData["Concerts"];
 }
 
 <div class="container">
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (Concerts concert in concerts)
+            @foreach (Concert concert in concerts)
             {
                 <tr>
                     <td>@concert.Name</td>
