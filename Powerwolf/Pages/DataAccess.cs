@@ -1,55 +1,45 @@
 ﻿using JsonFiles;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
-namespace Powerwolf;
-
-public static class DataAccess
+namespace Powerwolf
 {
-    public static List<BandMember> GetBandMembers()
+    public static class DataAccess
     {
-        List<BandMember> output = new List<BandMember>();
+        private static List<T> DeserializeJsonFile<T>(string fileName)
+        {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"jsons/{fileName}.json");
 
-        string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/BandMembers.json");
+            if (!File.Exists(filePath))
+            {
+                // Obsługa błędu lub zwracanie pustej listy w przypadku braku pliku
+                return new List<T>();
+            }
 
-        string jsonString = File.ReadAllText(filePath);
-        output = BandMember.FromJson(jsonString);
+            string jsonString = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<List<T>>(jsonString, JsonFiles.Converter.Settings);
+        }
 
-        return output;
-    }
+        public static List<BandMember> GetBandMembers()
+        {
+            return DeserializeJsonFile<BandMember>("BandMembers");
+        }
 
+        public static List<Concert> GetConcerts()
+        {
+            return DeserializeJsonFile<Concert>("Concerts");
+        }
 
-    public static List<Concert> GetConcerts()
-    {
-        List<Concert> output = new List<Concert>();
+        public static List<NewsItem> GetNews()
+        {
+            return DeserializeJsonFile<NewsItem>("News");
+        }
 
-        string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/Concerts.json");
-
-        string jsonString = File.ReadAllText(filePath);
-        output = Concert.FromJson(jsonString);
-
-        return output;
-    }
-
-    public static List<NewsItem> GetNews()
-    {
-        List<NewsItem> output = new List<NewsItem>();
-
-        string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/News.json");
-
-        string jsonString = File.ReadAllText(filePath);
-        output = NewsItem.FromJson(jsonString);
-
-        return output;
-    }
-
-    public static List<Song> GetSongs()
-    {
-        List<Song> output = new List<Song>();
-
-        string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "jsons/Songs.json");
-
-        string jsonString = File.ReadAllText(filePath);
-        output = Song.FromJson(jsonString);
-
-        return output;
+        public static List<Song> GetSongs()
+        {
+            return DeserializeJsonFile<Song>("Songs");
+        }
     }
 }
